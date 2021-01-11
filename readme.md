@@ -48,7 +48,7 @@ etc.
 
 ## Visual
 Based on the following mockup : 
-![image](https://github.com/MaximeNef/my.bocuse/blob/main/assets/imgs/.png)
+![image](https://www.figma.com/file/vQ0vz7hFjZN6s4eKYiXDv9/Mybeaucuz?node-id=0%3A1)
 
 Based on an organisation with a Trello and sketch : 
 [@TRELLO](https://trello.com/b/OD0n2NCn/mybocuse)
