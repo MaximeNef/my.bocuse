@@ -48,10 +48,13 @@ etc.
 
 ## Visual
 Based on the following mockup : 
-![image](https://github.com/madelinehenry/09-PaintingCollection/blob/main/img/.png)
+![image](https://github.com/MaximeNef/my.bocuse/blob/main/assets/img/.png)
 
+Based on an organisation with a Trello and sketch : 
+[@TRELLO](https://trello.com/b/OD0n2NCn/mybocuse)
+![image](https://github.com/MaximeNef/my.bocuse/blob/main/assets/img/maquette_croqui-base.png)
 
-![image](https://github.com/madelinehenry/09-PaintingCollection/blob/main//img/.png)
+![image](https://github.com/MaximeNef/my.bocuse/blob/main/assets/img/.png)
  
 
 ## Auteurs
