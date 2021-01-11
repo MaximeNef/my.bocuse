@@ -2,8 +2,6 @@
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/validated-html5.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](http://forthebadge.com)
 
-Let's imagine a strange virus hits the planet Earth : shopkeepers and restaurants are forced to find solutions in order to continue serving the public. Your mission, if you accept it, is to digitize the processes of the different companies affected by this terrible pandemic...
-
 ## Project infos 
 
 - **Type of challenge**: consolidation
