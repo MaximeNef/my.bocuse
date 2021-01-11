@@ -1,0 +1,52 @@
+body{
+    width: 100vw; 
+    height: 100vh; 
+}
+
+#profilPart{
+    width: 20%;
+    height: ;
+}
+
+#recipesPart{
+    width: 80%;
+}
+
+
+/* Stars difficulties */
+.grandBlocnote{
+        display: flex;
+        justify-content: ;
+        align-items: top;
+        margin: 0 auto 1em;
+        font-size: 25px;
+}
+ 
+.grandBlocnote div{
+    float:right;
+    color: rgb(235, 212, 82);
+    text-decoration: none;
+    -webkit-transition: color .3s;
+    -moz-transition: color .3s;
+    -o-transition: color .3s;
+    transition: color .3s;
+}
+ 
+.grandBlocnote div:hover,
+.grandBlocnote div:hover ~ div,
+.grandBlocnote div:focus,
+.grandBlocnote div:focus ~ div
+{
+    color: rgb(247, 232, 165);
+    cursor: pointer;
+}
+ 
+.grandBlocnote
+{
+    direction: rtl;
+}
+ 
+.grandBlocnote div
+{
+    float:none
+}
