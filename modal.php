@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <script src="https://use.fontawesome.com/b3178bb50e.js"></script>
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
-</head>
 <title>beacuz</title>
 </head>
 
