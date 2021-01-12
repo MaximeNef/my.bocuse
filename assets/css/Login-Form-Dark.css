@@ -73,7 +73,7 @@
 }
 
 div.stars {
-  width: 270px;
+  width: 150px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;

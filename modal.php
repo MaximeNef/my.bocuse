@@ -52,8 +52,8 @@
                                 <input type="date" class="form-control" id="releaseDate" placeholder="12/12/21">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="difficulty">Difficulty</label>
-                                <div class="container d-flex justify-content-center mt-200">
+                                <label for="difficulty">Rate</label>
+                                <div class="container d-flex justify-content-center">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="stars">
