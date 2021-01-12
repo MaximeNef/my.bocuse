@@ -48,15 +48,15 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="releaseDate">Date</label>
-                                <input type="date" class="form-control" id="releaseDate" placeholder="12/12/21">
+                                <input type="date" class="form-control" id="releaseDate">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="difficulty">Rate</label>
+                                <label for="rating">Rating</label>
                                 <div class="container d-flex justify-content-center">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="stars">
-                                                <form action=""> <input class="star star-5" id="star-5" type="radio"
+                                                <input class="star star-5" id="star-5" type="radio"
                                                         name="star" /> <label class="star star-5" for="star-5"></label>
                                                     <input class="star star-4" id="star-4" type="radio" name="star" />
                                                     <label class="star star-4" for="star-4"></label> <input
@@ -65,7 +65,7 @@
                                                         class="star star-2" id="star-2" type="radio" name="star" />
                                                     <label class="star star-2" for="star-2"></label> <input
                                                         class="star star-1" id="star-1" type="radio" name="star" />
-                                                    <label class="star star-1" for="star-1"></label> </form>
+                                                    <label class="star star-1" for="star-1"></label>
                                             </div>
                                         </div>
                                     </div>
@@ -75,8 +75,12 @@
 
                         <div class="form-row">
                             <div class="form-group col-12 col-md-12">
-                                <label for="ingredients">Ingredients</label>
-                                <textarea class="form-control" id="ingredients" row="50"> </textarea>
+                            
+                            <label for="ingredients">Ingredients</label>
+      <input type="text" class="form-control text-capitalize" id="ingredients" placeholder="ingredients">
+      
+                                <label for="instructions">Instructions</label>
+                                <textarea class="form-control" id="instructions" row="50"> </textarea>
                             </div>
                         </div>
                         <div class="form-row">
