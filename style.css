@@ -3,17 +3,11 @@ body{
     height: 100vh; 
 }
 
-#profilPart{
-    width: 20%;
-    height: ;
-}
-
-#recipesPart{
-    width: 80%;
-}
+/* Profil */
 
 
-/* Stars difficulties */
+
+/* Etoiles */
 .grandBlocnote{
         display: flex;
         justify-content: ;
