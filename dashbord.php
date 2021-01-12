@@ -12,7 +12,7 @@
     <!-- personal sheet css -->
     <link rel="stylesheet" href="style.css">
     
-    <title>My Beaucuz</title>
+<title>My Beaucuz</title>
 </head>
 
 <body>
@@ -21,6 +21,7 @@
     
     <nav class="navbar navbar-light bg-light navbar-collapse-lg">
         <div class="container-fluid justify-content-end"> 
+            <h1>My beaucuz</h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,13 +47,22 @@
     <div class="container-fluid">
         <div class="row gx-0">
             <div class="col-3" id="profilPart">
-                <h1 class="myProfilTitle">My profil</h1>
+                <h2 class="myProfilTitle">My profil</h2>
                 <i class="fa fa-user-circle fa-5x icone"></i>
                 <p id="name">NOM PRENOM</p>
                 <p id="email">EMAIL@GMAIL.COM</p>
             </div>
             <!-- List recipe -->
-            <div class="col-9" id="recipeList"></div>
+
+            <div class="col-9" id="recipeList">
+                <div>
+                    <h2 class="recipeTitle">List of recipes</h2>
+                    <div class="">
+                        <button type="button" class="btn btn-primary btn-lg">Arrival</button>
+                        <button type="button" class="btn btn-secondary btn-lg">Departure</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>

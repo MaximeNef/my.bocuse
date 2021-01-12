@@ -52,15 +52,26 @@ nav ul li{
     height:100vh;
     display: flex;
     flex-direction: column;
-
 }
+
 .card{
     margin: 0;
     width: 100%;
 }
 
-
 /* RecipeList Part */
+
+.recipeTitle{
+    margin: 60px 0px 0px 40px;
+}
+
+.btn{
+    height: 50px;
+    width: 200px;
+    margin: 40px 0px 30px 40px;
+    background-color: rgb(33, 74, 128); 
+}
+
 
 
 /* Etoiles */

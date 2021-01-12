@@ -1,3 +1,5 @@
+// générer les cards
+// fonction qui créer les cards
 function createCard(){
     let recipeList = document.getElementById("recipeList")
 
@@ -47,3 +49,6 @@ function createCard(){
 }
 
 createCard();
+
+// event pour les boutons arrivé
+
