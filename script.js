@@ -1,5 +1,5 @@
 function createCard(){
-        let recipeList = document.getElementById("recipeList")
+    let recipeList = document.getElementById("recipeList")
 
     let divCard = document.createElement("div")
     divCard.className = "card"
@@ -17,12 +17,12 @@ function createCard(){
 
     let byWho = document.createElement("h6")
     byWho.className = "card-subtitle mb-2 text-muted"
-    byWho.textContent = "LastName FirstName"
+    byWho.textContent = "Recipe creator"
     cardBody.appendChild(byWho)
 
     let addDate = document.createElement("h7")
     addDate.className = "card-subtitle mb-2 text-muted"
-    addDate.textContent = "Date"
+    addDate.textContent = "00.00.0000"
     cardBody.appendChild(addDate)
 
     let cardText= document.createElement("p")

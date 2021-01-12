@@ -1,10 +1,66 @@
+/* couleurs générales : rgb(30, 40, 51); rgb(33, 74, 128)fond = bouton login; */
+
 body{
     width: 100vw; 
     height: 100vh; 
 }
 
-/* Profil */
+/* navbar */
 
+nav ul li{
+    position: relative;
+}
+
+.drop-down{
+/* width: 75%; */
+    position: absolute;
+    top: 100%;
+/* problème de placement de menu à droite overlay droite */
+    left: 0;
+    right: 0;
+    z-index: 1; 
+    background-color: rgba(175, 174, 174, 0.5);
+}
+
+
+/* Profil */
+#profilPart {
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(30, 40, 51);
+    color: white;
+}
+
+.myProfilTitle{
+    margin: 60px 0;
+    color: white;
+}
+
+.icone{
+    margin: 30px 0;
+    color: rgb(33, 74, 128);
+    font-size: 125px;
+}
+
+#name,#email{
+    margin: 10px 0 ;
+}
+
+#recipeList{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+.card{
+    margin: 0;
+    width: 100%;
+}
+
+
+/* RecipeList Part */
 
 
 /* Etoiles */
