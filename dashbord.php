@@ -21,7 +21,7 @@
     
     <nav class="navbar navbar-light bg-light navbar-collapse-lg">
         <div class="container-fluid justify-content-end"> 
-            <h1>My beaucuz</h1>
+            <h1 class="titlePage">My beaucuz </h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -57,7 +57,7 @@
             <div class="col-9" id="recipeList">
                 <div>
                     <h2 class="recipeTitle">List of recipes</h2>
-                    <div class="">
+                    <div class="buttons">
                         <button type="button" class="btn btn-primary btn-lg">Arrival</button>
                         <button type="button" class="btn btn-secondary btn-lg">Departure</button>
                     </div>

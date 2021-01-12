@@ -38,17 +38,23 @@ function createCard(){
 
     //créer les étoiles jusque 5
     for (let i=1; i<6; i++){
-
         let star = document.createElement("div")
         star.className = "note"+ i
         star.dataCount = i
         star.textContent = "★"
         stars.appendChild(star)
-
     }
 }
 
 createCard();
 
 // event pour les boutons arrivé
+const buttons = document.querySelectorAll(".buttons");
 
+let buttonclick = false;
+
+.addEventListener("click",){
+    let = document.createElement("p")
+    .className = ""
+    .textContent = ""
+}

@@ -7,6 +7,10 @@ body{
 
 /* navbar */
 
+.titlePage{
+    margin-right: 50px;
+}
+
 nav ul li{
     position: relative;
 }
@@ -40,7 +44,7 @@ nav ul li{
 
 .icone{
     margin: 30px 0;
-    color: rgb(33, 74, 128);
+    color: rgb(41, 128, 239);
     font-size: 125px;
 }
 
@@ -72,20 +76,23 @@ nav ul li{
     background-color: rgb(33, 74, 128); 
 }
 
-
+.btn:hover{
+    background-color: rgb(41, 128, 239);
+    color: white;
+    cursor: pointer; 
+}
 
 /* Etoiles */
 .grandBlocnote{
         display: flex;
-        justify-content: ;
         align-items: top;
         margin: 0 auto 1em;
-        font-size: 25px;
+        font-size: 30px;
 }
  
 .grandBlocnote div{
     float:right;
-    color: rgb(235, 212, 82);
+    color: rgb(255, 227, 69);
     text-decoration: none;
     -webkit-transition: color .3s;
     -moz-transition: color .3s;
