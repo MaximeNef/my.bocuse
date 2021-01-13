@@ -116,5 +116,11 @@ nav ul li{
  
 .grandBlocnote div
 {
-    float:none
+    float:none;
+
+}
+
+
+#recipe-img{
+    max-width: 95%;
 }

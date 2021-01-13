@@ -1,4 +1,4 @@
-# My Bocuse 
+# My Beaucuz 
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/validated-html5.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](http://forthebadge.com)
 
@@ -48,10 +48,13 @@ etc.
 
 ## Visual
 Based on the following mockup : 
-![image](https://github.com/madelinehenry/09-PaintingCollection/blob/main/img/.png)
+[@ON FIGMA](https://www.figma.com/file/vQ0vz7hFjZN6s4eKYiXDv9/Mybeaucuz?node-id=0%3A1)
 
+Based on an organisation with a Trello and sketch : 
+[@TRELLO](https://trello.com/b/OD0n2NCn/mybocuse)
+![image](https://github.com/MaximeNef/my.bocuse/blob/main/assets/imgs/maquette_croqui-base.png)
 
-![image](https://github.com/madelinehenry/09-PaintingCollection/blob/main//img/.png)
+![image](https://github.com/MaximeNef/my.bocuse/blob/main/assets/imgs/.png)
  
 
 ## Auteurs
