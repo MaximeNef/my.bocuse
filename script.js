@@ -48,13 +48,21 @@ function createCard(){
 
 createCard();
 
-// event pour les boutons arrivé
-// const buttons = document.querySelectorAll(".buttons");
+//  event pour les boutons arrival et departure
+ const buttons = document.querySelectorAll(".buttons .btn");
 
-// let buttonclick = false;
+ let buttonclick = false;
 
-// .addEventListener("click",){
-//     let = document.createElement("p")
-//     .className = ""
-//     .textContent = ""
-// }
+for (let button of buttons) {
+    button.addEventListener("click",() => {
+    let now = new Date();
+    const hour = now.getHours()
+    const min = now.getMinutes()
+    button.textContent = hour + ":" +now.getMinutes()
+    button.style.backgroundColor = "rgb(41, 128, 239)"
+    buttonclick = true
+    
+ })
+}
+
+ 

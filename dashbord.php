@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,37 +14,20 @@
     <!-- frontAwesome --> 
     <script src="https://use.fontawesome.com/b3178bb50e.js"></script>
     <!-- personal sheet css -->
-    <link rel="stylesheet" href="style.css">
-    
-<title>My Beaucuz</title>
+    <link rel="stylesheet" href="style.css">  
+    <title>My Beaucuz</title>
 </head>
-
 <body>
     <!-- General recipe list page -->
     <!-- Burger Menu -->
-    
     <nav class="navbar navbar-light bg-light navbar-collapse-lg">
         <div class="container-fluid justify-content-end"> 
             <h1 class="titlePage">My beaucuz </h1>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="bt btn btn-secondary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"><i class="bi bi-chevron-left">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
             </button>
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse drop-down" id="navbarSupportedContent">
-                    <ul class="nav flex-column align-items-end">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Personnel informations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">New recipe</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Log out</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </div>
     </nav>
     <!-- Profil part -->
@@ -51,20 +38,20 @@
                 <i class="fa fa-user-circle fa-5x icone"></i>
                 <p id="name">NOM PRENOM</p>
                 <p id="email">EMAIL@GMAIL.COM</p>
+                <p class="para">My recipes : </p>
+                <button class="btn btn-lg btn-dashboard logOut">Log out</button>
             </div>
             <!-- List recipe -->
-
             <div class="col-9" id="recipeList">
                 <div>
                     <h2 class="recipeTitle">List of recipes</h2>
                     <div class="buttons">
-                        <button type="button" class="btn btn-primary btn-lg">Arrival</button>
-                        <button type="button" class="btn btn-secondary btn-lg">Departure</button>
+                        <button type="button" class="btn btn-lg btn-dashboard">Arrival</button>
+                        <button type="button" class="btn btn-lg btn-dashboard">Departure</button>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
 
