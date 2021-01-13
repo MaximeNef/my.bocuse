@@ -1,4 +1,4 @@
-// générer les cards
+/*// générer les cards
 // fonction qui créer les cards
 function createCard(){
     let recipeList = document.getElementById("recipeList")
@@ -47,7 +47,7 @@ function createCard(){
 }
 
 createCard();
-
+*/
 //  event pour les boutons arrival et departure
  const buttons = document.querySelectorAll(".buttons .btn");
 

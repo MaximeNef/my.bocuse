@@ -38,7 +38,13 @@ session_start();
                 <i class="fa fa-user-circle fa-5x icone"></i>
                 <p id="name">NOM PRENOM</p>
                 <p id="email">EMAIL@GMAIL.COM</p>
-                <p class="para">My recipes : </p>
+                <p class="para">My recipes : 
+                    <ul class="listRecipesProfil">
+                        <li>Name of recipe</li>
+                        <li>Name of recipe</li>
+                        <li>Name of recipe</li>
+                    </ul>
+                </p>
                 <button class="btn btn-lg btn-dashboard logOut">Log out</button>
             </div>
             <!-- List recipe -->
@@ -50,6 +56,22 @@ session_start();
                         <button type="button" class="btn btn-lg btn-dashboard">Departure</button>
                     </div>
                 </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Title of recipe</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Recipe creator</h6>
+                    <h7 class="card-subtitle mb-2 text-muted">00.00.0000</h7>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of card s content.</p>
+                    <div class="col-lg-12 grandBlocnote">
+                        <div class="note1">★</div>
+                        <div class="note2">★</div>
+                        <div class="note3">★</div>
+                        <div class="note4">★</div>
+                        <div class="note5">★</div>
+                    </div>
+
+                </div>
+            </div>
             </div>
         </div>
     </div>

@@ -70,6 +70,14 @@ nav ul li{
 
 /* RecipeList Part */
 
+nav{
+    background-color: #214a80; 
+}
+
+ul.listRecipesProfil{
+    color: white;
+}
+
 .recipeTitle{
     margin: 60px 0px 0px 40px;
 }
