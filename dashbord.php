@@ -51,6 +51,10 @@
                 <i class="fa fa-user-circle fa-5x icone"></i>
                 <p id="name">NOM PRENOM</p>
                 <p id="email">EMAIL@GMAIL.COM</p>
+
+                <?php 
+                    include('modal.php');
+                ?>
             </div>
             <!-- List recipe -->
 
