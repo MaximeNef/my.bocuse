@@ -49,12 +49,12 @@ function createCard(){
 createCard();
 
 // event pour les boutons arrivé
-const buttons = document.querySelectorAll(".buttons");
+// const buttons = document.querySelectorAll(".buttons");
 
-let buttonclick = false;
+// let buttonclick = false;
 
-.addEventListener("click",){
-    let = document.createElement("p")
-    .className = ""
-    .textContent = ""
-}
+// .addEventListener("click",){
+//     let = document.createElement("p")
+//     .className = ""
+//     .textContent = ""
+// }
