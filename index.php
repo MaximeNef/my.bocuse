@@ -1,3 +1,55 @@
+<?php
+session_start();
+ini_set('display_errors','on');
+error_reporting(E_ALL);
+  //session_destroy();
+
+$db = New PDO('mysql:host=localhost:8889;dbname=my_bocuse_user', 'root','root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+
+
+if(!isset($_SESSION['logged'])){
+    $_SESSION['logged']=false;
+}
+
+if(isset($_POST['email']) AND isset($_POST['password'])){
+    $email=$_POST['email'];
+    $mdp=$_POST['password'];
+    $id = $db->prepare("SELECT id FROM users WHERE email = ? ");
+    $id->execute([
+        $email
+    ]); 
+     $_SESSION['id'] = $id->fetch();
+     $_SESSION['email'] = $_POST['email'];
+    
+    // print_r($dataid);
+    echo $dataid['id'];
+
+    $verif = $db->prepare("SELECT id, email, password FROM users WHERE email = ? ");
+    $verif->execute([
+        $email
+    ]);
+    
+    
+  
+   
+    $data = $verif->fetch();
+    if(!empty($data)){
+
+        if(password_verify($_POST['password'],$data['password'])){
+            $_SESSION['logged']=true;
+        }
+    }
+}
+
+if($_SESSION['logged']== true){
+    header('Location: dashbord.php');
+    //echo '<p>lets go bitch</p>';
+    
+}else{
+    // echo'<p>NOOOOON</p>'; 
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
