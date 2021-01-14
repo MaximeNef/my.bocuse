@@ -14,7 +14,7 @@
     <title>My Beaucuz</title>
 </head>
 <body>
-    <!-- General recipe list page -->
+    <!-- General learners list page -->
     <!-- Burger Menu -->
     <nav class="navbar navbar-light bg-light navbar-collapse-lg">
         <div class="container-fluid justify-content-end"> 
@@ -43,7 +43,7 @@
                 </p>
                 <button class="btn btn-lg btn-dashboard logOut">Log out</button>
             </div>
-            <!-- List recipe -->
+            <!-- List learners -->
             <div class="col-9" id="learnersList">
                 <div>
                     <h2 class="learnersListTitle">List of learners</h2>
