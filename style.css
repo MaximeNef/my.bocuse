@@ -57,7 +57,10 @@ nav ul li{
     color: white;
 } */
 
-#recipeList{
+
+
+/* RecipeList Part */
+#recipeListPart{
     height:100vh;
     display: flex;
     flex-direction: column;
@@ -68,8 +71,6 @@ nav ul li{
     width: 100%;
 }
 
-/* RecipeList Part */
-
 nav{
     background-color: #214a80; 
 }
@@ -78,7 +79,7 @@ ul.listRecipesProfil{
     color: white;
 }
 
-.recipeTitle{
+.titleList{
     margin: 60px 0px 0px 40px;
 }
 
