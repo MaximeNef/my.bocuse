@@ -1,7 +1,6 @@
-
 <?php
 session_start();
-$db = New PDO('mysql:host=localhost:8889;dbname=my_bocuse_user', 'root','root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$db = new PDO('mysql:host=localhost:8889;dbname=my_bocuse_user', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 ?>
 
@@ -30,12 +29,17 @@ if (mysqli_connect_errno()) {
     <!-- frontAwesome -->
     <script src="https://use.fontawesome.com/b3178bb50e.js"></script>
     <!-- personal sheet css -->
-    <link rel="stylesheet" href="style.css">  
+
+    <link rel="stylesheet" href="style.css">
+
+
     <title>My Beaucuz</title>
 </head>
 
 <body>
     <?php
+
+
     $name = $db->prepare("SELECT first_name,last_name FROM users WHERE id = ? ");
     $name->execute([
         $_SESSION['id'][0]
@@ -49,9 +53,9 @@ if (mysqli_connect_errno()) {
         <div class="container-fluid justify-content-end">
             <h1 class="titlePage">My beaucuz </h1>
             <button class="bt btn btn-secondary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"><i class="bi bi-chevron-left">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-            </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                    </svg>
             </button>
         </div>
     </nav>
@@ -65,6 +69,7 @@ if (mysqli_connect_errno()) {
                 
                 <p id="name"><?php echo $name_complete['first_name'] . $name_complete['last_name']; ?></p>
                 <p id="email"><?php echo $_SESSION["email"] ?></p>
+
                  <?php include('modal.php'); ?> 
             
                
@@ -209,17 +214,13 @@ if (mysqli_connect_errno()) {
     </div>
            
             </div>
-
-<?php } ?>
-            </div>
-            </div>
-        </div>
-    
-<!-- javascript bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <!-- javascript bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <script src="./script.js"></script>
 </body>
 
