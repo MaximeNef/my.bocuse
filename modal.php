@@ -1,3 +1,32 @@
+<?php
+
+
+if(!empty($_POST['plat']) AND !empty($_POST['category']) AND !empty($_POST['date']) AND !empty($_POST['star']) AND !empty($_POST['ingredients']) AND !empty($_POST['instru'])){
+$plat=$_POST['plat'];
+$category=$_POST['category'];
+$date=$_POST['date'];
+$star=$_POST['star'];
+$ingredients=$_POST['ingredients'];
+$instru=$_POST['instru'];
+$save=$_POST['save'];
+
+$recette = $db->prepare("INSERT INTO recettes(FK_id_users, titleR, typeR, dateR, difficultyR, ingredientR, instructionR)
+                        VALUES(?, ?, ?, ?, ?, ?, ?)");
+ $recette->execute([
+     $_SESSION['id'][0],
+    strip_tags(trim($plat)),
+    strip_tags(trim($category)),
+    strip_tags(trim($date)),
+    strip_tags(trim($star)),
+    strip_tags(trim($ingredients)),
+    strip_tags(trim($instru))
+ ]) ;                    
+print_r($_POST);
+}
+
+?>
+
+
 <!-- Button trigger modal -->
 <!DOCTYPE html>
 <html lang="en">
@@ -33,22 +62,22 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="recipeTitle">Title</label>
-                                <input type="text" class="form-control" id="recipeTitle" placeholder="Chicken Parmesan">
+                                <input type="text" class="form-control" id="recipeTitle" placeholder="Chicken Parmesan" name="plat">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="mealcategory">Type</label>
-                                <select id="mealcategory" class="form-control">
+                                <select id="mealcategory" class="form-control" name="category">
                                     <option selected>Choose...</option>
-                                    <option value="Starter">Starter</option>
-                                    <option value="Main">Main</option>
-                                    <option value="Dessert">Dessert</option>
+                                    <option value="Starter" >Starter</option>
+                                    <option value="Main" >Main</option>
+                                    <option value="Dessert" >Dessert</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="releaseDate">Date</label>
-                                <input type="date" class="form-control" id="releaseDate">
+                                <input type="date" class="form-control" id="releaseDate" name="date">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="rating">Rating</label>
@@ -57,14 +86,15 @@
                                         <div class="col-md-12">
                                             <div class="stars">
                                                 <input class="star star-5" id="star-5" type="radio"
-                                                        name="star" /> <label class="star star-5" for="star-5"></label>
-                                                    <input class="star star-4" id="star-4" type="radio" name="star" />
+                                                        name="star" value="five"/>
+                                                         <label class="star star-5" for="star-5"></label>
+                                                    <input class="star star-4" id="star-4" type="radio" name="star" value="four"/>
                                                     <label class="star star-4" for="star-4"></label> <input
-                                                        class="star star-3" id="star-3" type="radio" name="star" />
+                                                        class="star star-3" id="star-3" type="radio" name="star" value="three"/>
                                                     <label class="star star-3" for="star-3"></label> <input
-                                                        class="star star-2" id="star-2" type="radio" name="star" />
+                                                        class="star star-2" id="star-2" type="radio" name="star" value="two"/>
                                                     <label class="star star-2" for="star-2"></label> <input
-                                                        class="star star-1" id="star-1" type="radio" name="star" />
+                                                        class="star star-1" id="star-1" type="radio" name="star" value="one"/>
                                                     <label class="star star-1" for="star-1"></label>
                                             </div>
                                         </div>
@@ -77,16 +107,16 @@
                             <div class="form-group col-12 col-md-12">
                             
                             <label for="ingredients">Ingredients</label>
-      <input type="text" class="form-control text-capitalize" id="ingredients" placeholder="ingredients">
+      <input type="text" class="form-control text-capitalize" id="ingredients" placeholder="ingredients" name="ingredients">
       
                                 <label for="instructions">Instructions</label>
-                                <textarea class="form-control" id="instructions" row="50"> </textarea>
+                                <textarea class="form-control" id="instructions" row="50" name="instru"> </textarea>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class=" form-group modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="submit" class="btn btn-primary" name="save">Save changes</button>
                             </div>
                         </div>
                     </form>
@@ -94,7 +124,7 @@
             </div>
         </div>
     </div>
-
+    
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/rating.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
