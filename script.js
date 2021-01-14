@@ -48,7 +48,7 @@ function createCard(){
 
 createCard();
 */
-//  event pour les boutons arrival et departure
+/*//  event pour les boutons arrival et departure
  const buttons = document.querySelectorAll(".buttons .btn");
 
  let buttonclick = false;
@@ -64,5 +64,5 @@ for (let button of buttons) {
     
  })
 }
-
+*/
  
