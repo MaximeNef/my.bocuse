@@ -5,7 +5,7 @@ body{
     height: 100vh; 
 }
 
-/* navbar */
+/* navbar part */
 
 .titlePage{
     margin-right: 50px;
@@ -27,7 +27,7 @@ nav ul li{
 }
 
 
-/* Profil */
+/* Profil part */
 #profilPart {
     height:100vh;
     display: flex;
@@ -60,6 +60,9 @@ nav ul li{
 
 
 /* RecipeList Part */
+
+
+
 #recipeListPart{
     height:100vh;
     display: flex;
@@ -85,7 +88,6 @@ ul.listRecipesProfil{
 
 
 .btn-dashboard{
-
     height: 50px;
     width: 200px;
     margin: 40px 0px 30px 40px;
