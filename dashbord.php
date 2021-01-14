@@ -34,6 +34,12 @@
                 <i class="fa fa-user-circle fa-5x icone"></i>
                 <p id="name">NOM PRENOM</p>
                 <p id="email">EMAIL@GMAIL.COM</p>
+
+
+                <?php 
+                    include('modal.php');
+                ?>
+            
                 <p class="para">My recipes : 
                     <ul class="listRecipesProfil">
                         <li>Name of recipe</li>
@@ -42,6 +48,7 @@
                     </ul>
                 </p>
                 <button class="btn btn-lg btn-dashboard logOut">Log out</button>
+
             </div>
             <!-- List recipe -->
             <div class="col-9" id="recipeList">
