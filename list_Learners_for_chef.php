@@ -14,7 +14,7 @@
     <title>My Beaucuz</title>
 </head>
 <body>
-    <!-- General recipe list page -->
+    <!-- General learners list page -->
     <!-- Burger Menu -->
     <nav class="navbar navbar-light bg-light navbar-collapse-lg">
         <div class="container-fluid justify-content-end"> 
@@ -30,7 +30,7 @@
     <div class="container-fluid">
         <div class="row gx-0">
             <div class="col-3" id="profilPart">
-                <h2 class="myProfilTitle">My profil(chef)</h2>
+                <h2 class="myProfilTitle">My profil (chef)</h2>
                 <i class="fa fa-user-circle fa-5x icone"></i>
                 <p id="name">NOM PRENOM</p>
                 <p id="email">EMAIL@GMAIL.COM</p>
@@ -43,20 +43,33 @@
                 </p>
                 <button class="btn btn-lg btn-dashboard logOut">Log out</button>
             </div>
-            <!-- List recipe -->
+            <!-- List learners -->
             <div class="col-9" id="learnersList">
                 <div>
-                    <h2 class="learnersListTitle">List of learners</h2>
+                    <h2 class="titleList">List of learners</h2>
                     <div class="buttons">
                         <button type="button" class="btn btn-lg btn-dashboard">Arrival</button>
                         <button type="button" class="btn btn-lg btn-dashboard">Departure</button>
                     </div>
                 </div>
             <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Name of learner</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">information de connection</h6>
-                    <h7 class="card-subtitle mb-2 text-muted">list of recipes</h7>
+                <div class="card-body learners">
+                    <div class="">
+                        <h5 class="card-title">Name of learner</h5>
+                        <img class="pictureLearner">picture learner</img>
+                    <p class="emailLearner">email learner</p>
+                    </div>
+                    <div class="learnersRecipeHistory">
+                        <h5 class="learnersRecipeHistory-Title">Recipe History</h5>
+                        <a class="card-subtitle mb-2 text-muted">
+                            <ul>
+                                <li>recipes 1</li>
+                            </ul> 
+                        </a>
+                    </div>
+                    <div class="learnersConnectHistory">
+                        <h5 class="learnersConnectHistory-Title">Connection History</h5>
+                    </div>
                 </div>
             </div>
             </div>
