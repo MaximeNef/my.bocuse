@@ -1,4 +1,4 @@
-// générer les cards
+/*// générer les cards
 // fonction qui créer les cards
 function createCard(){
     let recipeList = document.getElementById("recipeList")
@@ -47,14 +47,22 @@ function createCard(){
 }
 
 createCard();
+*/
+/*//  event pour les boutons arrival et departure
+ const buttons = document.querySelectorAll(".buttons .btn");
 
-// event pour les boutons arrivé
-// const buttons = document.querySelectorAll(".buttons");
+ let buttonclick = false;
 
-// let buttonclick = false;
-
-// .addEventListener("click",){
-//     let = document.createElement("p")
-//     .className = ""
-//     .textContent = ""
-// }
+for (let button of buttons) {
+    button.addEventListener("click",() => {
+    let now = new Date();
+    const hour = now.getHours()
+    const min = now.getMinutes()
+    button.textContent = hour + ":" +now.getMinutes()
+    button.style.backgroundColor = "rgb(41, 128, 239)"
+    buttonclick = true
+    
+ })
+}
+*/
+ 
