@@ -9,6 +9,7 @@ $date = date('Y-m-d');
 date_default_timezone_set("Europe/Paris");
 
 $heure = date('Y-m-d h:i:s');
+
 $condition = $db->prepare("SELECT * FROM connection WHERE date = ? AND FK_id_user = ?");
 $condition->execute([$date, $_SESSION['userid']]);
 $condition_fetch = $condition->fetch();

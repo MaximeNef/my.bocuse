@@ -1,4 +1,23 @@
-<?php session_start(); ?>
+<?php
+session_start();
+$db = new PDO('mysql:host=localhost:8889;dbname=my_bocuse_user', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+
+?>
+
+<?php
+/* Database connection start */
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "my_bocuse_user";
+$conn = mysqli_connect($servername, $username, $password, $dbname) or die("Connection failed: " . mysqli_connect_error());
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,14 +29,17 @@
     <!-- frontAwesome -->
     <script src="https://use.fontawesome.com/b3178bb50e.js"></script>
     <!-- personal sheet css -->
+
     <link rel="stylesheet" href="style.css">
+
 
     <title>My Beaucuz</title>
 </head>
 
 <body>
     <?php
-    $db = new PDO('mysql:host=localhost:3307;dbname=my_bocuse_user', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+
+
     $name = $db->prepare("SELECT first_name,last_name FROM users WHERE id = ? ");
     $name->execute([
         $_SESSION['userid'][0]
@@ -31,28 +53,14 @@
 
     <!-- General recipe list page -->
     <!-- Burger Menu -->
-
     <nav class="navbar navbar-light bg-light navbar-collapse-lg">
         <div class="container-fluid justify-content-end">
             <h1 class="titlePage">My beaucuz </h1>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="bt btn btn-secondary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"><i class="bi bi-chevron-left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                    </svg>
             </button>
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse drop-down" id="navbarSupportedContent">
-                    <ul class="nav flex-column align-items-end">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Personnel informations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">New recipe</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Log out</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </div>
     </nav>
     <!-- Profil part -->
@@ -65,7 +73,6 @@
                 <p id="email"><?php echo $_SESSION["email"] ?></p>
                 <?php include('modal.php'); ?>
             </div>
-            <!-- List recipe -->
 
             <div class="col-9" id="recipeList">
                 <div>
@@ -77,7 +84,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     <?php
 
