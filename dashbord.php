@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,25 +6,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <!-- frontAwesome --> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- frontAwesome -->
     <script src="https://use.fontawesome.com/b3178bb50e.js"></script>
     <!-- personal sheet css -->
     <link rel="stylesheet" href="style.css">
-    
-<title>My Beaucuz</title>
+
+    <title>My Beaucuz</title>
 </head>
 
 <body>
+    <?php
+    $db = new PDO('mysql:host=localhost:3307;dbname=my_bocuse_user', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $name = $db->prepare("SELECT first_name,last_name FROM users WHERE id = ? ");
+    $name->execute([
+        $_SESSION['userid'][0]
+    ]);
+
+    $name_complete = $name->fetch();
+
+
+    ?>
+
+
     <!-- General recipe list page -->
     <!-- Burger Menu -->
-    
+
     <nav class="navbar navbar-light bg-light navbar-collapse-lg">
-        <div class="container-fluid justify-content-end"> 
+        <div class="container-fluid justify-content-end">
             <h1 class="titlePage">My beaucuz </h1>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="container-fluid">
@@ -49,8 +61,9 @@
             <div class="col-3" id="profilPart">
                 <h2 class="myProfilTitle">My profil</h2>
                 <i class="fa fa-user-circle fa-5x icone"></i>
-                <p id="name">NOM PRENOM</p>
-                <p id="email">EMAIL@GMAIL.COM</p>
+                <p id="name"><?php echo $name_complete['first_name'] . $name_complete['last_name']; ?></p>
+                <p id="email"><?php echo $_SESSION["email"] ?></p>
+                <?php include('modal.php'); ?>
             </div>
             <!-- List recipe -->
 
@@ -58,20 +71,31 @@
                 <div>
                     <h2 class="recipeTitle">List of recipes</h2>
                     <div class="buttons">
-                        <button type="button" class="btn btn-primary btn-lg">Arrival</button>
-                        <button type="button" class="btn btn-secondary btn-lg">Departure</button>
+                        <button type="button" id="boutonArriver" class="btn btn-primary btn-lg">Arrival</button>
+                        <button type="button" id="boutonDepart" class="btn btn-secondary btn-lg">Departure</button>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
+    <?php
+
+
+    // echo '<script type="text/javascript"> ' 
+    ?>
+
+
+
 
 
     <!-- javascript bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <script src="./script.js"></script>
 </body>
 
