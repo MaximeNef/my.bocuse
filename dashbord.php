@@ -42,11 +42,7 @@ if (mysqli_connect_errno()) {
     ]);
 
     $name_complete = $name->fetch();
-
-
     ?>
-
-
     <!-- General recipe list page -->
     <!-- Burger Menu -->
     <nav class="navbar navbar-light bg-light navbar-collapse-lg">
