@@ -1,3 +1,23 @@
+<?php
+session_start();
+$db = New PDO('mysql:host=localhost:8889;dbname=my_bocuse_user', 'root','root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+
+?>
+
+<?php
+/* Database connection start */
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "my_bocuse_user";
+$conn = mysqli_connect($servername, $username, $password, $dbname) or die("Connection failed: " . mysqli_connect_error());
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +71,13 @@
                 <i class="fa fa-user-circle fa-5x icone"></i>
                 <p id="name">NOM PRENOM</p>
                 <p id="email">EMAIL@GMAIL.COM</p>
+                
+                <?php
+                include('modal.php');
+                ?>
             </div>
+
+        
             <!-- List recipe -->
 
             <div class="col-9" id="recipeList">
@@ -62,6 +88,29 @@
                         <button type="button" class="btn btn-secondary btn-lg">Departure</button>
                     </div>
                 </div>
+                <?php
+            $sql = "SELECT FK_id_users, titleR, dateR, ingredientR FROM recettes";
+            $sql2 = "SELECT id,last_name,first_name FROM users";
+            $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
+           
+            while($record = mysqli_fetch_assoc($resultset)) {
+            ?>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"><?php echo $record['titleR']; ?></h5>
+            <h6 class="card-subtitle mb-2 text-muted"> nom de la personne </h6>
+            <h7 class="card-subtitle mb-2 text-muted"><?php echo $record['dateR']; ?></h7>
+            <p class="card-text"><?php echo $record['ingredientR']; ?></p>
+            <div class="col-lg-12 grandBlocnote">
+                <div class="note1">★</div>
+                <div class="note2">★</div>
+                <div class="note3">★</div>
+                <div class="note4">★</div>
+                <div class="note5">★</div>
+            </div>
+        </div>
+    </div>
+<?php } ?>
             </div>
         </div>
 
