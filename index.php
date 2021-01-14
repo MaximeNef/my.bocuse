@@ -31,7 +31,7 @@
     error_reporting(E_ALL);
     //session_destroy();
 
-    $db = new PDO('mysql:host=localhost:3307;dbname=my_bocuse_user', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $db = new PDO('mysql:host=localhost:8889;dbname=my_bocuse_user', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 
     if (!isset($_SESSION['logged'])) {
@@ -65,8 +65,16 @@
     }
 
     if ($_SESSION['logged'] == true) {
-        header('Location: dashbord.php');
-        //echo '<p>lets go bitch</p>';
+        $account=$db->prepare("SELECT accout_type FROM users WHERE id=?");
+        $account->execute([
+            $_SESSION['userid']
+        ]);
+        $account_type=$account->fetch();
+        if($account_type[0]=='learner'){
+            header('Location: dashbord.php');
+        }else if($account_type[0]=='coach'){
+            header('Location: dashboardAdmin.php');
+        }
 
     } else {
         // echo'<p>NOOOOON</p>'; 

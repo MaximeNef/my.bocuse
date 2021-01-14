@@ -21,7 +21,6 @@ $recette = $db->prepare("INSERT INTO recettes(FK_id_users, titleR, typeR, dateR,
     strip_tags(trim($ingredients)),
     strip_tags(trim($instru))
  ]) ;                    
-print_r($_POST);
 }
 
 ?>
@@ -44,10 +43,10 @@ print_r($_POST);
 <body>
     <div class="container">
 <div class="neuroph">
-    <button type="button" class="btn">
+    <button type="button" class="btn" id="boutonArriver">
          ARRIVAL </button></div>
 <div class="neuroph">
-    <button type="button" class="btn"  >
+    <button type="button" class="btn" id="boutonDepart">
          DEPART </button></div></div>
 
          <p class="para">My recipes : 

@@ -42,7 +42,7 @@ if (mysqli_connect_errno()) {
 
     $name = $db->prepare("SELECT first_name,last_name FROM users WHERE id = ? ");
     $name->execute([
-        $_SESSION['userid'][0]
+        $_SESSION['userid']
     ]);
 
     $name_complete = $name->fetch();
@@ -64,16 +64,17 @@ if (mysqli_connect_errno()) {
         <div class="row gx-0">
             <div class="col-3" id="profilPart">
             <div class="neuro">
-                <h2 class="myProfilTitle">My profil</h2>
+                <h2 class="myProfilTitle">My profil(Admin)</h2>
                 <i class="fa fa-user-circle fa-5x icone"></i>
                 
                 <p id="name"><?php echo $name_complete['first_name'] . $name_complete['last_name']; ?></p>
                 <p id="email"><?php echo $_SESSION["email"] ?></p>
 
-                 <?php include('modal.php'); ?> 
-            
-               
-               <div class="neuroph">
+                
+                <div class="neuroph">
+                <button class="btn btn-dashboard"><a href="./attendances.php"> Attendances</a></button> 
+                </div>
+               <div class="neuroph">    
                 <button class="btn btn-dashboard"><a href="./logout.php">Log out</a></button>
                 </div>
                 

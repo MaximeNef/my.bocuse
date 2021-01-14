@@ -3,7 +3,7 @@ session_start();
 ini_set('display_errors', 'on');
 error_reporting(E_ALL);
 
-$db = new PDO('mysql:host=localhost:3307;dbname=my_bocuse_user', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$db = new PDO('mysql:host=localhost:8889;dbname=my_bocuse_user', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 $date = date('Y-m-d');
 date_default_timezone_set("Europe/Paris");

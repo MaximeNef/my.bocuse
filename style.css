@@ -94,10 +94,11 @@ box-shadow:  25px 25px 50px #bebebe,
              -25px -25px 50px #ffffff;
 }
 .neuros{
-   
-    
+   background-image: url(https://resize.prod.femina.ladmedia.fr/rblr/652,438/img/var/2020-03/aliments-confinement.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
              border-radius: 50px;
- background: #e0e0e0; 
+
 box-shadow:  25px 25px 50px #bebebe,
              -25px -25px 50px #ffffff;
 }
