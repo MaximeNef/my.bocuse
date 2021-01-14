@@ -31,7 +31,7 @@
     error_reporting(E_ALL);
     //session_destroy();
 
-    $db = new PDO('mysql:host=localhost:8889;dbname=my_bocuse_user', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $db = new PDO('mysql:host=localhost;dbname=pzqrmnyr_mybocuse', 'pzqrmnyr_ak', 'Agneskabongo95', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 
     if (!isset($_SESSION['logged'])) {

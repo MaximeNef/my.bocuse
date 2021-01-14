@@ -1,15 +1,15 @@
 <?php
 session_start();
-$db = new PDO('mysql:host=localhost:8889;dbname=my_bocuse_user', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$db = new PDO('mysql:host=localhost;dbname=pzqrmnyr_mybocuse', 'pzqrmnyr_ak', 'Agneskabongo95', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 ?>
 
 <?php
 /* Database connection start */
 $servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "my_bocuse_user";
+$username = "pzqrmnyr_ak";
+$password = "Agneskabongo95";
+$dbname = "pzqrmnyr_mybocuse";
 $conn = mysqli_connect($servername, $username, $password, $dbname) or die("Connection failed: " . mysqli_connect_error());
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
@@ -42,7 +42,7 @@ if (mysqli_connect_errno()) {
 
     $name = $db->prepare("SELECT first_name,last_name FROM users WHERE id = ? ");
     $name->execute([
-        $_SESSION['userid'][0]
+        $_SESSION['userid']
     ]);
 
     $name_complete = $name->fetch();
@@ -163,8 +163,7 @@ if (mysqli_connect_errno()) {
             <h2 > THE RECETTES</h2>  
         
             <?php
-            $sql = "SELECT FK_id_users, titleR, dateR, ingredientR, difficultyR  FROM recettes";
-            $sql2 = "SELECT id,last_name,first_name FROM users";
+            $sql = "SELECT FK_id_users, titleR,last_name, first_name, dateR, ingredientR, difficultyR  FROM recettes INNER JOIN users on recettes.FK_id_users = users.id";
             $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
            
             while($record = mysqli_fetch_assoc($resultset)) {
@@ -175,7 +174,7 @@ if (mysqli_connect_errno()) {
          <div class="neuros">
         <div class="card-body recipes">
             <h4 class="card-title"><?php echo $record['titleR']; ?></h4>
-            <h5 class="card-subtitle mb-2 text-muted"> nom de la personne </h5>
+            <h5 class="card-subtitle mb-2 text-muted"><?php echo $record['first_name'].' '.$record['last_name']; ?> </h5>
             <h6 class="card-subtitle mb-2 text-muted"><?php echo $record['dateR']; ?></h6>
             <p class="card-text"><?php echo $record['ingredientR']; ?></p>
             <div class="col-lg-1 grandBlocnote">

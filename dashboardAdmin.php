@@ -1,15 +1,15 @@
 <?php
 session_start();
-$db = new PDO('mysql:host=localhost:8889;dbname=my_bocuse_user', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$db = new PDO('mysql:host=localhost;dbname=pzqrmnyr_mybocuse', 'pzqrmnyr_ak', 'Agneskabongo95', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 ?>
 
 <?php
 /* Database connection start */
 $servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "my_bocuse_user";
+$username = "pzqrmnyr_ak";
+$password = "Agneskabongo95";
+$dbname = "pzqrmnyr_mybocuse";
 $conn = mysqli_connect($servername, $username, $password, $dbname) or die("Connection failed: " . mysqli_connect_error());
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());

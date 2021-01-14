@@ -13,7 +13,7 @@ $save=$_POST['save'];
 $recette = $db->prepare("INSERT INTO recettes(FK_id_users, titleR, typeR, dateR, difficultyR, ingredientR, instructionR)
                         VALUES(?, ?, ?, ?, ?, ?, ?)");
  $recette->execute([
-     $_SESSION['id'][0],
+     $_SESSION['userid'],
     strip_tags(trim($plat)),
     strip_tags(trim($category)),
     strip_tags(trim($date)),
