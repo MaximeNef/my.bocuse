@@ -31,9 +31,9 @@ if (mysqli_connect_errno()) {
     <script src="https://use.fontawesome.com/b3178bb50e.js"></script>
     <!-- personal sheet css -->
     <link rel="stylesheet" href="style.css">  
-
     <title>My Beaucuz</title>
 </head>
+
 <body>
     <?php
     $name = $db->prepare("SELECT first_name,last_name FROM users WHERE id = ? ");
@@ -52,7 +52,6 @@ if (mysqli_connect_errno()) {
     <nav class="navbar navbar-light bg-light navbar-collapse-lg">
         <div class="container-fluid justify-content-end">
             <h1 class="titlePage">My beaucuz </h1>
-
             <button class="bt btn btn-secondary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"><i class="bi bi-chevron-left">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -80,10 +79,8 @@ if (mysqli_connect_errno()) {
                 <button class="btn btn-lg btn-dashboard logOut">Log out</button>
             </div>
 
-
-        
             <!-- List recipe -->
-            <div class="col-9" id="recipeList">     
+            <div class="col-9" id="recipeListPart">     
                    
             <?php
             $sql = "SELECT FK_id_users, titleR, dateR, ingredientR FROM recettes";
@@ -93,7 +90,7 @@ if (mysqli_connect_errno()) {
             while($record = mysqli_fetch_assoc($resultset)) {
             ?>
     <div class="card">
-        <div class="card-body">
+        <div class="card-body recipes">
             <h5 class="card-title"><?php echo $record['titleR']; ?></h5>
             <h6 class="card-subtitle mb-2 text-muted"> nom de la personne </h6>
             <h7 class="card-subtitle mb-2 text-muted"><?php echo $record['dateR']; ?></h7>
@@ -117,6 +114,7 @@ if (mysqli_connect_errno()) {
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <script src="./script.js"></script>
 </body>
 
