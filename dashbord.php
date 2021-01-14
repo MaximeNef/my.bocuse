@@ -38,7 +38,7 @@ if (mysqli_connect_errno()) {
     <?php
     $name = $db->prepare("SELECT first_name,last_name FROM users WHERE id = ? ");
     $name->execute([
-        $_SESSION['userid'][0]
+        $_SESSION['id'][0]
     ]);
 
     $name_complete = $name->fetch();
@@ -59,47 +59,156 @@ if (mysqli_connect_errno()) {
     <div class="container-fluid">
         <div class="row gx-0">
             <div class="col-3" id="profilPart">
+            <div class="neuro">
                 <h2 class="myProfilTitle">My profil</h2>
                 <i class="fa fa-user-circle fa-5x icone"></i>
+                
                 <p id="name"><?php echo $name_complete['first_name'] . $name_complete['last_name']; ?></p>
                 <p id="email"><?php echo $_SESSION["email"] ?></p>
-                <?php include('modal.php'); ?>
+                 <?php include('modal.php'); ?> 
             
-                <p class="para">My recipes : 
-                    <ul class="listRecipesProfil">
-                        <li>Name of recipe</li>
-                        <li>Name of recipe</li>
-                        <li>Name of recipe</li>
-                    </ul>
-                </p>
-                <button class="btn btn-lg btn-dashboard logOut">Log out</button>
+               
+               <div class="neuroph">
+                <button class="btn btn-dashboard"><a href="./logout.php">Log out</a></button>
+                </div>
+                
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="addRecipeModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Add a new recipe</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="recipeTitle">Title</label>
+                                <input type="text" class="form-control" id="recipeTitle" placeholder="Chicken Parmesan" name="plat">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="mealcategory">Type</label>
+                                <select id="mealcategory" class="form-control" name="category">
+                                    <option selected>Choose...</option>
+                                    <option value="Starter" >Starter</option>
+                                    <option value="Main" >Main</option>
+                                    <option value="Dessert" >Dessert</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="releaseDate">Date</label>
+                                <input type="date" class="form-control" id="releaseDate" name="date">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="rating">Rating</label>
+                                <div class="container d-flex justify-content-center">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="stars">
+                                                <input class="star star-5" id="star-5" type="radio"
+                                                        name="star" value="five"/>
+                                                         <label class="star star-5" for="star-5"></label>
+                                                    <input class="star star-4" id="star-4" type="radio" name="star" value="four"/>
+                                                    <label class="star star-4" for="star-4"></label> <input
+                                                        class="star star-3" id="star-3" type="radio" name="star" value="three"/>
+                                                    <label class="star star-3" for="star-3"></label> <input
+                                                        class="star star-2" id="star-2" type="radio" name="star" value="two"/>
+                                                    <label class="star star-2" for="star-2"></label> <input
+                                                        class="star star-1" id="star-1" type="radio" name="star" value="one"/>
+                                                    <label class="star star-1" for="star-1"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-12">
+                            
+                            <label for="ingredients">Ingredients</label>
+      <input type="text" class="form-control text-capitalize" id="ingredients" placeholder="ingredients" name="ingredients">
+      
+                                <label for="instructions">Instructions</label>
+                                <textarea class="form-control" id="instructions" row="50" name="instru"> </textarea>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class=" form-group modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary" name="save">Save changes</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
             </div>
 
             <!-- List recipe -->
             <div class="col-9" id="recipeListPart">     
-                   
+            <h2 > THE RECETTES</h2>  
+        
             <?php
-            $sql = "SELECT FK_id_users, titleR, dateR, ingredientR FROM recettes";
+            $sql = "SELECT FK_id_users, titleR, dateR, ingredientR, difficultyR  FROM recettes";
             $sql2 = "SELECT id,last_name,first_name FROM users";
             $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
            
             while($record = mysqli_fetch_assoc($resultset)) {
             ?>
-    <div class="card">
+        
+    <div class="card border border-white"> 
+       
+            <div class="neuros">
         <div class="card-body recipes">
-            <h5 class="card-title"><?php echo $record['titleR']; ?></h5>
-            <h6 class="card-subtitle mb-2 text-muted"> nom de la personne </h6>
-            <h7 class="card-subtitle mb-2 text-muted"><?php echo $record['dateR']; ?></h7>
+            <h4 class="card-title"><?php echo $record['titleR']; ?></h4>
+            <h5 class="card-subtitle mb-2 text-muted"> nom de la personne </h5>
+            <h6 class="card-subtitle mb-2 text-muted"><?php echo $record['dateR']; ?></h6>
             <p class="card-text"><?php echo $record['ingredientR']; ?></p>
-            <div class="col-lg-12 grandBlocnote">
-                <div class="note1">★</div>
-                <div class="note2">★</div>
-                <div class="note3">★</div>
-                <div class="note4">★</div>
-                <div class="note5">★</div>
+            <div class="col-lg-1 grandBlocnote">
+             
+                <?php 
+                switch($record['difficultyR']){
+                    case  $record['difficultyR'] == 'one':
+                        echo '<div class="note1">★</div>';
+                        break;
+                    case  $record['difficultyR'] == 'two':
+                        echo '<div class="note1">★</div>';
+                        echo '<div class="note1">★</div>';
+                        break;
+                    case  $record['difficultyR'] == 'three':
+                        echo '<div class="note1">★</div>';
+                        echo '<div class="note1">★</div>';
+                        echo '<div class="note1">★</div>';
+                        break;
+                    case  $record['difficultyR'] == 'four':
+                        echo '<div class="note1">★</div>';
+                        echo '<div class="note1">★</div>';
+                        echo '<div class="note1">★</div>';
+                        echo '<div class="note1">★</div>';
+                        break;
+                    case  $record['difficultyR'] == 'five':
+                        echo '<div class="note1">★</div>';
+                        echo '<div class="note1">★</div>';
+                        echo '<div class="note1">★</div>';
+                        echo '<div class="note1">★</div>';
+                        echo '<div class="note1">★</div>';
+                            break;
+                }
+               ?>
             </div>
         </div>
     </div>
+           
+            </div>
 
 <?php } ?>
             </div>
