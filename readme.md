@@ -52,7 +52,7 @@ Based on the following mockup :
 Based on an organisation with a Trello and sketch : 
 [@TRELLO](https://trello.com/b/OD0n2NCn/mybocuse)
 
-![image](https://github.com/MaximeNef/my.bocuse/blob/main/assets/imgs/loginpage.png)
+![image](https://github.com/MaximeNef/my.bocuse/blob/master/assets/imgs/loginpage.png)
  
 
 ## Auteurs
