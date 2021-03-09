@@ -60,7 +60,7 @@ You can find the website [Here](http://mybocuse.epizy.com/index.php?i=1)
 
 (Some useful credentials :
 ADMIN: email =  psw= 
-STUDENT: email =  psw= )
+STUDENT: email = lalalou@gmail.com  psw= Aristocat)
 
 ## Auteurs
 * **Agnès** _alias_ [@Agkabongo](https://github.com/agkabongo)
