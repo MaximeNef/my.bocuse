@@ -25,6 +25,7 @@ What you need to get started ...
 
 - basics in **HTML**
 - basics in **CSS**
+- - basics in **Bootstrap**
 - basics in **JavaScript**
 - basics in **PHP**
 - basics in **DataBase**
